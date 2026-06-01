@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join our global mission to protect rare plants, endangered wildlife, and biodiversity. Discover real ways to take action today.">
+    <meta name="robots" content="index, follow">
+    <title>EcoShield | Protecting Rare Flora & Fauna</title>
+    <style>
+        :root {
+            --primary: #1b5e20;
+            --primary-dark: #0d230d;
+            --primary-light: #e8f5e9;
+            --accent: #e65100;
+            --text-color: #2c3e50;
+            --bg-light: #f9fbf9;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+        }
+
+        /* Navigation */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(27, 94, 32, 0.75), rgba(13, 35, 13, 0.85)), 
+                        url('https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: #fff;
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #bf360c;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        /* Mission Section */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .mission-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary);
+        }
+
+        .mission-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: var(--primary-dark);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 10px auto 0;
+        }
+
+        /* Action Section */
+        .action-steps {
+            background-color: var(--primary-light);
+            padding: 60px 20px;
+            border-radius: 8px;
+            margin: 60px 0;
+        }
+
+        .steps-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .steps-list li {
+            margin-bottom: 20px;
+            font-size: 16px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .steps-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Contact & Authority Info Section */
+        .contact-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-info, .contact-map {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .info-item strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .info-item a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .nav-container { flex-direction: column; gap: 15px; }
+            .contact-section { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">🌿 EcoShield</a>
+            <ul class="nav-links">
+                <li><a href="#about">Our Mission</a></li>
+                <li><a href="#action">Take Action</a></li>
+                <li><a href="#contact">Verify & Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Showcase -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Voices for the Voiceless: Protect Our Rare Species</h1>
+            <p>Every 20 minutes, another species of plant or animal faces extinction. Our ecosystems are fragile, but your choices can reverse the damage. Together, we preserve the future of biodiversity.</p>
+            <a href="#action" class="btn">Learn How to Help</a>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- About & Mission Section -->
+        <section id="about">
+            <h2 class="section-title">Why Biodiversity Matters</h2>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <h3>Endangered Wildlife Protection</h3>
+                    <p>From the snow leopards of Central Asia to the sea turtles in our oceans, we work to secure key habitats, combat illegal poaching, and mitigate human-wildlife conflicts around the globe.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>Rare Flora Conservation</h3>
+                    <p>Plants form the foundation of all terrestrial life. We map, monitor, and restore threatened plant species and ancient forests that regulate our climate and provide crucial medicinal resources.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>Global Climate Action</h3>
+                    <p>Protecting ecosystems goes hand in hand with fighting climate change. Healthy forests, oceans, and grasslands act as massive carbon sinks that keep our planet stable.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Guide Section -->
+        <section id="action" class="action-steps">
+            <h2 class="section-title">How You Can Protect Nature Daily</h2>
+            <ul class="steps-list">
+                <li><strong>Say No to Illegal Wildlife Products:</strong> Avoid purchasing souvenirs, fashion items, or medicines made from endangered plants, ivory, tortoise shells, or rare animal parts.</li>
+                <li><strong>Reduce Carbon Footprint & Waste:</strong> Choose sustainable, locally grown food, minimize single-use plastics that choke marine ecosystems, and save water at home.</li>
+                <li><strong>Support Certified Sustainable Wood & Paper:</strong> Look for FSC (Forest Stewardship Council) labels on products to prevent global deforestation and habitat destruction.</li>
+                <li><strong>Spread Awareness and Educate:</strong> Share scientific conservation facts with family and children. True environmental care stems from long-term empathy and awareness.</li>
+            </ul>
+        </section>
+
+        <!-- Real-World Authority & Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Connect with Global Conservation</h2>
+            <div class="contact-section">
+                <div class="contact-info">
+                    <h3>World Wildlife Fund (WWF) HQ</h3>
+                    <p style="margin-bottom: 20px; font-size: 14px; color: #666;">To ensure accountability and transparency, we connect you directly with one of the world's most trusted global conservation authorities.</p>
+                    
+                    <div class="info-item">
+                        <strong>Official Organization:</strong>
+                        World Wildlife Fund (WWF) United States
+                    </div>
+                    <div class="info-item">
+                        <strong>Headquarters Address:</strong>
+                        1250 24th Street, N.W., Washington, DC 20037, USA
+                    </div>
+                    <div class="info-item">
+                        <strong>Mailing Address:</strong>
+                        P.O. Box 97180, Washington, DC 20090-7180
+                    </div>
+                    <div class="info-item">
+                        <strong>Official Phone Line:</strong>
+                        +1 (202) 293-4800
+                    </div>
+                    <div class="info-item">
+                        <strong>Official Website:</strong>
+                        <a href="https://www.worldwildlife.org" target="_blank" rel="noopener noreferrer">www.worldwildlife.org</a>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <!-- Informative Box explaining how to verify NGO integrity -->
+                    <div style="background-color: #fffde7; border-left: 4px solid #fbc02d; padding: 20px; border-radius: 4px; height: 100%;">
+                        <h4 style="color: #f57f17; margin-bottom: 10px; font-size: 16px;">💡 Verification & Trust Notice</h4>
+                        <p style="font-size: 14px; line-height: 1.7; color: #555;">
+                            When joining conservation movements or donating to save rare animals and plants, always verify that the organization holds verified non-profit status (such as a registered 501(c)(3) or national charity registration number). 
+                        </p>
+                        <p style="font-size: 14px; line-height: 1.7; color: #555; margin-top: 12px;">
+                            By routing direct support to seasoned entities like the WWF, your resources immediately fund real-world field rangers, anti-poaching wildlife corridors, and emergency botanical preserves.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer>
+        <div class="container" style="margin: 0 auto; padding: 0;">
+            <p>&copy; 2026 EcoShield Initiative. Dedicated to global biodiversity awareness.</p>
+            <p style="font-size: 12px; margin-top: 5px; opacity: 0.5;">All referenced names and addresses belong to their respective registered legal entities.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
